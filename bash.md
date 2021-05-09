@@ -80,6 +80,65 @@ $ new_command $_
 ```
 I find it useful for the subsequent ls then cd situations. 
 
-### [Tip 5]()
-### [Tip 5]()
-### [Tip 5]()
+### [Tip 9](https://www.linkedin.com/posts/smenon8_tipoftheday-day9-activity-6778722123604226048-jIpj)
+Configure your key-bindings to filter commands from history based on prefix:
+Say you have the below contents in your bash history
+command arg1
+command arg2
+random cmd
+
+Run,
+```
+bind '"\e[A": history-search-backward' # bind up arrow key
+bind '"\e[A": history-search-forward'  # bind down arrow key
+```
+After this,
+```
+command <up or down arrow key>
+# Will cycle through only arg2 and arg1
+```
+
+### [Tip 10](https://www.linkedin.com/posts/smenon8_tipoftheday-day10-activity-6779084357127806976-W7i6)
+Display status code of your last command in your prompt:
+
+`$?` stores the return code of last command, so you can add this to your `.bashrc` or `.bash_profile`
+```
+PS1 += “ [ \$? ]”
+```
+For full colored customization of your prompt with exit status: https://lnkd.in/g8KHyEy
+
+
+### [Tip 11](https://www.linkedin.com/posts/smenon8_tipoftheday-day11-activity-6779812691465916416-nkDU)
+Tired of waiting for your long running command to complete but it’s important enough to monitor the output?
+
+`watch` to your rescue.
+
+```
+$ watch <command> # Will monitor the output of the command every 2 seconds.
+$ watch -n <seconds> <command> # monitor command every n seconds
+$ watch -d <command> # monitor every 2 seconds and highlight differences with last output
+```
+
+### [Tip 12](https://www.linkedin.com/posts/smenon8_tipoftheday-day12-activity-6780175061702852608-oXu2)
+Typing a really long complex command on the shell can often get messy, even with line separators.
+
+Type `Ctrl+X` then `Ctrl+E` to open an editor (vi) and enter your command there.
+
+### [Tip 13](https://www.linkedin.com/posts/smenon8_tipoftheday-day13-activity-6780537465724919808-iQeu)
+Cutting and pasting on the shell is often messy and involves multiple keystrokes and/or mouse.
+
+You can now cut the last token from the shell using `Ctrl + W`, and then use `Ctrl + Y` to paste that token.   
+Note: this only works for tokens and a token is the last word typed after the space delimiter.
+
+### [Tip 14](https://www.linkedin.com/posts/smenon8_readline-killing-commands-bash-reference-activity-6780899851560452096-llgE)
+Killing(cut) and yanking(paste) text - advanced
+
+This is a continuation of cut and paste shortcut tip
+
+`Ctrl + K` : cut everything from the current cursor position till the end of line
+`Ctrl + Y`: to paste the contents.
+
+There are many more kill & yank shortcuts to master here: https://lnkd.in/gMrDVyX   
+Consider using a clipboard manager if you want to preserve and manage the contents of your clipboard.
+On Linux (or any other GNOME based distributions), try GPaste.
+
